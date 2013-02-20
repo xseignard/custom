@@ -1,0 +1,13 @@
+<div class="alignleft">
+  <% if (config.author){ %>
+  &copy; <%= new Date().getFullYear() %> <%= config.author %>
+  <% } else { %>
+  &copy; <%= new Date().getFullYear() %> <%= config.title %>
+  <% } %>
+</div>
+<div class="alignright">
+  Proudly powered by <a href="http://zespia.tw/hexo/">Hexo</a><br/>
+  Gently hosted at <a href="http://github.com">Github</a><br/>
+  Nice background from <a href="http://subtlepatterns.com/">Subtle Patterns</a>
+</div>
+<div class="clearfix"></div>
