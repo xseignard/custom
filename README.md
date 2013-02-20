@@ -21,8 +21,6 @@ git pull
 
 ## Config
 
-See ```_config.yaml```
+See ```_config.yml```
 
 [Hexo]: http://zespia.tw/hexo/
-[AddThis]: https://www.addthis.com
-[Fancybox]: http://fancyapps.com/fancybox/
