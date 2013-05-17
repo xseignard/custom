@@ -32,21 +32,31 @@
   <meta property="og:site_name" content="<%= config.title %>"/>
 
   <!-- TWITTER CARD -->
+  <!-- card type -->
   <% if (page.twitter_card){ %><meta property="twitter:card" content="<%= page.twitter_card %>"/><% } else { %>
   <meta property="twitter:card" content="<%= config.twitter_card %>"/>
   <% } %>
+  <!-- site -->
   <meta property="twitter:site" content="<%= config.author %>"/>
+  <!-- author -->
   <meta property="twitter:creator" content="<%= config.author %>"/>
-  <% if (page.title){ %><meta property="twitter:title" content="<%= page.title %>"/><% } %>
+  <!-- title -->
+  <% if (page.title){ %>
+  <meta property="twitter:title" content="<%= page.title %>"/>
+  <% } else { %>
+  <meta name="twitter:title" content="<%= config.title %>">
+  <% } %>
+  <!-- description -->
   <% if (page.description){ %>
   <meta name="twitter:description" content="<%= page.description %>">
-  <% } else if (config.description){ %>
-  <meta name="twitter:description" content="<%= config.description %>">
   <% } else if (page.excerpt){ %>
   <meta name="twitter:description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>">
   <% } else if (page.content){ %>
   <meta name="twitter:description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 200) %>">
+  <% } else { %>
+  <meta name="twitter:description" content="<%= config.description %>">
   <% } %>
+  <!-- image -->
   <% if (page.twitter_image){ %><meta property="twitter:image" content="<%= page.twitter_image %>"/><% } %>
   <!-- TWITTER CARD -->
 
