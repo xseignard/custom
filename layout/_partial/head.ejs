@@ -31,6 +31,23 @@
   <% if (page.title){ %><meta property="og:title" content="<%= page.title %>"/><% } %>
   <meta property="og:site_name" content="<%= config.title %>"/>
 
+  <!-- TWITTER CARD -->
+  <% if (page.twitter_card){ %><meta property="twitter:card" content="<%= page.twitter_card %>"/><% } %>
+  <meta property="twitter:site" content="<%= config.author %>"/>
+  <meta property="twitter:creator" content="<%= config.author %>"/>
+  <% if (page.title){ %><meta property="twitter:title" content="<%= page.title %>"/><% } %>
+  <% if (page.description){ %>
+  <meta name="twitter:description" content="<%= page.description %>">
+  <% } else if (config.description){ %>
+  <meta name="twitter:description" content="<%= config.description %>">
+  <% } else if (page.excerpt){ %>
+  <meta name="twitter:description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>">
+  <% } else if (page.content){ %>
+  <meta name="twitter:description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 200) %>">
+  <% } %>
+  <% if (page.twitter_image){ %><meta property="twitter:image" content="<%= page.twitter_image %>"/><% } %>
+  <!-- TWITTER CARD -->
+  
   <link href="<%- config.root %>favicon.png" rel="icon">
   <link rel="alternate" href="<% if (theme.rss){ %><%- theme.rss %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %>" type="application/atom+xml">
   <link rel="stylesheet" href="<%- config.root %>css/style.css" media="screen" type="text/css">
