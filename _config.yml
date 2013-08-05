@@ -12,8 +12,7 @@ excerpt_link: Read More
 
 twitter:
   username: xavier_seignard
-  show_replies: false
-  tweet_count: 5
+  widgetID: 364346162255368193
 
 addthis:
   enable: true
